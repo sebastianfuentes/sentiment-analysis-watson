@@ -1,0 +1,81 @@
+html {
+  padding: 0;
+  min-height: 100%;
+}
+body {
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  min-height: 100vh;
+}
+body .container-fluid {
+  min-height: 100vh;
+}
+body .half {
+  padding: 3em;
+  min-height: 100vh;
+}
+body .half.line {
+  border-right: 1px solid #aaa;
+}
+body .half.line textarea {
+  min-height: 4em;
+}
+body .half.line textarea:focus {
+  border-bottom-color: #ee6e73;
+  box-shadow: 0 1px 0 #ee6e73;
+}
+body .half.line label.active {
+  color: #ee6e73 !important;
+}
+body .half.line input {
+  color: #fff;
+}
+body .half .results {
+  padding-top: 1em;
+}
+body .half .results .result {
+  padding: 1em 0;
+  display: flex;
+  margin-bottom: 0.5em;
+}
+body .half .results .result .name {
+  width: 5em;
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+body .half .results .result .score {
+  background-color: #f0f0f0;
+  flex-grow: 1;
+  height: 1.4em;
+  align-self: center;
+  position: relative;
+}
+body .half .results .result .score .indicator {
+  position: absolute;
+  z-index: 2;
+}
+body .half .results .result .score .indicator._0 {
+  left: 0;
+  top: 1.4em;
+}
+body .half .results .result .score .indicator._100 {
+  right: 0;
+  top: 1.4em;
+}
+body .half .results .result .score .wrapper {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: inherit;
+  left: 0;
+  right: 0;
+}
+body .half .results .result .score .wrapper .fill {
+  background-color: #80d8ff;
+  position: absolute;
+  left: -100%;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+}

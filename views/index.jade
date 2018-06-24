@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  nav
+    .nav-wrapper
+      a.brand-logo.center(href='#!') Intellig
+
+  .container-fluid
+    .row
+      .col.m6
+        .half.line
+          form(action="/", method="post")
+            .input-field
+              textarea.materialize-textarea(name="text")
+              label Por favor el texto a analizar, este debe contar con mas de 150 caracteres
+            .input-field.right-align
+              input.right-aligned.red.accent-1.btn.waves-effect.waves-light(type="submit", value="Evaluar", name="submit")
+      .col.m6
+        .half
+          h4 Texto evaluado
+          =text
+          br
+          br
+          if results
+            h4 Resultados
+            .results
+              each result, index in results
+                .result
+                  if result.tone_name
+                    .name
+                      =result.tone_name 
+                  if result.score
+                    .score(data-score=result.score, data-id=index)
+                      .indicator._0 0%
+                      .indicator._100 100%
+                      .wrapper
+                        .fill
+          else
+            h5 No se pudieron obtener resultados con el texto evaluado o no se introdujo texto
+block js
+  script(src="/javascripts/analysis.js")
